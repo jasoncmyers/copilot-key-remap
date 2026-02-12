@@ -56,8 +56,8 @@ HandleSpecialCases(keyName, mods) {
 	; Loop until either a non-modifier key is captured or timer expires
 	while remain > 0 {
 		; Create an input hook to catch a single key (L1) or timer (T) ends
-		ih := InputHook("L1 T" . (remain/1000.0)
-		ih.KeyOpt("{All}", "E"))  ; triggers "End" state on all keypresses
+		ih := InputHook("L1 T" . (remain/1000.0))
+		ih.KeyOpt("{All}", "E")  ; triggers "End" state on all keypresses
 		ih.Start()
 		got := ih.Wait()
 
